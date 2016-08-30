@@ -105,7 +105,7 @@ def conv_text_to_notes(encoded_drums, note_list=None):
 # Convert the text to midi format
 def conv_text_to_midi(filename):
 	if os.path.exists(filename[:-4]+'.mid'):
-		return
+		os.remove(filename[:-4]+'.mid')
 	f = open(filename, 'r')
 	f.readline() # title
 	f.readline() # seed sentence
